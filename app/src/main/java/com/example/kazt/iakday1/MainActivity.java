@@ -11,7 +11,8 @@ import android.widget.TextView;
 import com.example.kazt.iakday1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding.btnSubmit.setOnClickListener(v -> {
-            
+                Intent goLanjut = new Intent(MainActivity.this, LanjutActivity.class);
+
+                ModelIdentitas identitas = new ModelIdentitas();
+                identitas.setNama(binding.edtNama.getText().toString());
+                identitas.setNim(binding.edtNim.getText().toString());
+                identitas.setEmail(binding.edtEmail.getText().toString());
+                goLanjut.putExtra("nama",binding.edtNama.getText().toString());
+                goLanjut.putExtra("model",identitas);
+
+
+                startActivity(goLanjut);
         });
     }
 }
