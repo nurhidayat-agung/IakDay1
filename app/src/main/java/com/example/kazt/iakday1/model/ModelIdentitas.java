@@ -1,4 +1,4 @@
-package com.example.kazt.iakday1;
+package com.example.kazt.iakday1.model;
 
 import java.io.Serializable;
 
