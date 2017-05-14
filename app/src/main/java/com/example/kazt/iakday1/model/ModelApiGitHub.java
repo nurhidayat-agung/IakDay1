@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class ModelApiGitHub {
+
     @SerializedName("name")
     @Expose
     private String name;
@@ -23,6 +24,5 @@ public class ModelApiGitHub {
     @SerializedName("avatar_url")
     @Expose
     private String avatar_url;
-
 
 }
