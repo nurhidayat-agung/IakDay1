@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.kazt.iakday1.databinding.ActivityMyGitHubBinding;
 import com.example.kazt.iakday1.model.ModelApiGitHub;
 import com.example.kazt.iakday1.netService.GitHubService;
@@ -42,10 +43,15 @@ public class MyGitHub extends AppCompatActivity {
             public void onResponse(Call<ModelApiGitHub> call, Response<ModelApiGitHub> response) {
                 Toast.makeText(MyGitHub.this, "cek", Toast.LENGTH_SHORT).show();
                 data = response.body();
+                binding.tvNama.setText(data.getName());
                 binding.tvBio.setText(data.getBio());
                 binding.tvBlog.setText(data.getBlog());
                 binding.tvCompany.setText(data.getCompany());
                 binding.tvLocation.setText(data.getLocation());
+                Glide.with(MyGitHub.this)
+                        .load(data.getAvatar_url())
+                        .fitCenter()
+                        .into(binding.ivAvatar);
             }
 
             @Override
