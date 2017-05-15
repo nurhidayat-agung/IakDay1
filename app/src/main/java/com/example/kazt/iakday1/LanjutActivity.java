@@ -20,7 +20,7 @@ public class LanjutActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_lanjut);
         nama = getIntent().getStringExtra("nama");
         identitas = (ModelIdentitas) getIntent().getSerializableExtra("model");
-        binding.editNama.setText(nama);
+        binding.editNama.setText(identitas.getNama());
         binding.editEmail.setText(identitas.getEmail());
         binding.editNim.setText(identitas.getNim());
     }

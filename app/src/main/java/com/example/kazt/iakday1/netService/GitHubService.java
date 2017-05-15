@@ -11,7 +11,7 @@ import retrofit2.http.GET;
  */
 
 public interface GitHubService {
-    @GET("/users/nurhidayat-agung")
+    @GET("/users/ganti-disini-dengan-url-profilemu")
     Call<ModelApiGitHub> getGitHubProfile();
 
 }

@@ -42,12 +42,19 @@ public class MyGitHub extends AppCompatActivity {
             @Override
             public void onResponse(Call<ModelApiGitHub> call, Response<ModelApiGitHub> response) {
                 Toast.makeText(MyGitHub.this, "cek", Toast.LENGTH_SHORT).show();
+
+                //masukin data dari server github ke objek data
                 data = response.body();
+
+                // menampilkan di text view
                 binding.tvNama.setText(data.getName());
                 binding.tvBio.setText(data.getBio());
                 binding.tvBlog.setText(data.getBlog());
                 binding.tvCompany.setText(data.getCompany());
                 binding.tvLocation.setText(data.getLocation());
+
+
+                //masukin data dari url yang tersipan di data.getAvatar_url()
                 Glide.with(MyGitHub.this)
                         .load(data.getAvatar_url())
                         .fitCenter()
